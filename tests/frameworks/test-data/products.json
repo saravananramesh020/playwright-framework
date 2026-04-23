@@ -1,0 +1,20 @@
+[
+
+{
+  "product" : "laptop"
+  ,"brand" : "hp"
+
+},
+{
+   "product":"smartphones"
+   ,"brand": "samsung"
+
+},
+{
+   "product":"airpods"
+   ,"brand": "oneplus"
+
+}
+
+
+]
