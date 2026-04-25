@@ -1,4 +1,4 @@
-import {test,expect} from '@playwright/test'
+import {test,expect, request} from '@playwright/test'
 test.describe('api testing',()=>{
 
 test('getapi',async({request})=>{
@@ -64,7 +64,24 @@ expect(updatedata.title).toBe('patch API')
 
 })
 
+test('delete api',async({request})=>{
 
+const deletedata= await request.delete('https://jsonplaceholder.typicode.com/posts/1')
+console.log(deletedata.status())
+expect(deletedata.status()).toBe(200)
+})
+test('headed',async({request})=>{
+    const faketoken = 'sample token'
+const response = await request.get('https://jsonplaceholder.typicode.com/posts/1',{
+headers :{
+     'authorizations':`Bearer ${faketoken}`,
+    'content-type':'application/json'
+}
+})
 
-
+const responseapi=await response.json()
+console.log(responseapi)
+expect(response.status()).toBe(200)
+expect(responseapi.id).toBe(1)
+})
 })

@@ -9,7 +9,7 @@ export class Amazonpage {
         await this.page.keyboard.press('Enter')
     }
     async selectallproduct(modelname: string) {
-        await this.page.getByRole('link', { name: modelname }).first()
+        await this.page.getByRole('link', { name: modelname })
             .click()
     }
     async verifypageloaded() {
