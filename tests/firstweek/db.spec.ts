@@ -17,5 +17,4 @@ test('Database connection', async ({}) => {
     console.log(result.rows)
     expect(result.rows.length).toBeGreaterThan(0)
     await client.end()
-
 })
