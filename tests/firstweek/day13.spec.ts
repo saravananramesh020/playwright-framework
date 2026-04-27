@@ -1,5 +1,4 @@
 import{test,expect} from '@playwright/test'
-import { promises } from 'node:dns'
 test('multiple windows',async({page,context})=>{
 
 await page.goto('https://rahulshettyacademy.com/AutomationPractice/')
