@@ -38,6 +38,8 @@ test('hard assertion', async ({ page }) => {
     await expect(
         page.locator('h1')
     ).toHaveText('Practice Page')
+   await page.waitForLoadState()
+    await expect(page.locator('h3')).toHaveText('File Uploaded!')
     console.log('This line runs only if assertion passes')
 
 await expect.soft(page.locator('h1')).toHaveText('practice page')
