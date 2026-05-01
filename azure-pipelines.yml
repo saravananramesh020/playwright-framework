@@ -23,3 +23,14 @@ steps:
   displayName: 'Run Selected Test'
   env:
     TEST_ENV: $(TEST_ENV)
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: 'test-results/*.xml'
+    failTaskOnFailedTests: true
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: 'playwright-report'
+    artifactName: 'playwright-report'        
