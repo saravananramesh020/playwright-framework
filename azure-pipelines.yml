@@ -16,5 +16,5 @@ steps:
 - script: npx playwright install --with-deps
   displayName: 'Install Playwright browsers'
 
-- script: npx playwright test tests/firstweek/day12.spec.ts --project=chromium
+- script: npx playwright test tests/firstweek/day2.spec.ts --project=chromium
   displayName: 'Run Selected Test'
