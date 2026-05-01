@@ -1,6 +1,5 @@
 import{test,expect} from '@playwright/test'
-import { link } from 'node:fs'
-import { execPath } from 'node:process'
+
 test.beforeEach(async({page})=>{
 await page.goto('https://rahulshettyacademy.com/AutomationPractice/')
 })
