@@ -9,20 +9,20 @@ test.afterEach(async({page},testInfo)=>{
 })
 test("dropdown handling",async({page})=>{
 await page.getByRole('combobox').selectOption('Option1')
-await page.waitForTimeout(20000)
+await page.waitForTimeout(2000)
 await expect(page.getByRole('combobox')).toHaveValue('option1')
 await page.locator('#dropdown-class-example').selectOption('option1');
 })
 
 test('checkbox',async({page})=>{
 await page.locator('#checkBoxOption1').check()
-await page.waitForTimeout(20000)
+await page.waitForTimeout(2000)
 await expect(page.locator('#checkBoxOption1')).toBeChecked()
 })
 
 test('radiobox',async({page})=>{
  await page.locator('label').filter({ hasText: 'Radio1' }).getByRole('radio').check();
-await page.waitForTimeout(20000)
+await page.waitForTimeout(2000)
 await expect(page.locator('label').filter({ hasText: 'Radio1' }).getByRole('radio')).toBeChecked()
 })
 
