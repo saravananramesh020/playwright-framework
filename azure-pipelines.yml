@@ -1,8 +1,8 @@
-trigger:
-- main
-
 variables:
   TEST_ENV: 'dev'
+
+trigger:
+- main
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -21,5 +21,5 @@ steps:
 
 - script: npx playwright test tests/firstweek/day2.spec.ts --project=chromium
   displayName: 'Run Selected Test'
- env:
+  env:
     TEST_ENV: $(TEST_ENV)
