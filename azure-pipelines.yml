@@ -29,7 +29,10 @@ steps:
     testResultsFormat: 'JUnit'
     testResultsFiles: 'test-results/*.xml'
     failTaskOnFailedTests: true
-
+- script: npm install -g allure-commandline --save-dev
+  displayName: 'Install Allure CLI'    
+- script: npx allure generate allure-results --clean -o allure-report
+  displayName: 'Generate Allure Report'
 - task: PublishBuildArtifacts@1
   inputs:
     pathToPublish: 'playwright-report'
