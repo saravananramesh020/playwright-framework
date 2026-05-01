@@ -11,7 +11,8 @@
   "devDependencies": {
     "@playwright/test": "^1.59.1",
     "@types/node": "^25.6.0",
-    "@types/pg": "^8.20.0"
+    "@types/pg": "^8.20.0",
+    "allure-playwright": "^3.7.1"
   },
   "dependencies": {
     "pg": "^8.20.0"
